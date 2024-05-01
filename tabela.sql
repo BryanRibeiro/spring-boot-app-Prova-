@@ -10,14 +10,14 @@ grant select, insert, delete, update on anotacao.* to user@'localhost';
 
 use anotacao;
 
-create table rac_racao (
-    rac_id bigint primary key auto_increment,
-    rac_marca varchar(100) not null unique,
-    rac_data_hora_ultima_compra datetime not null,
-    rac_quantidade_estoque float,
-    rac_nota int not null
+create table alu_aluno (
+    alu_id bigint primary key auto_increment,
+    alu_nome_completo varchar(100) not null,
+    alu_email_institucional varchar(100) not null,
+    alu_data_matricula date not null,
+    alu_indice float
 );
 
-insert into rac_racao (rac_marca, rac_data_hora_ultima_compra, rac_quantidade_estoque, rac_nota)
-values ('Purina', current_timestamp(), 10.5, 7),
-       ('Pedigree', '2024-03-15 23:59:59', null, 5);
+insert into alu_aluno (alu_nome_completo, alu_email_institucional, alu_data_matricula, alu_indice)
+values ('Charles Smith', 'csmith@email.com', curdate(), null),
+       ('Ann Doe', 'adoe@email.com', '2024-02-15', 6.3);
